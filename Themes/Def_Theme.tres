@@ -11,7 +11,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 fallback/0 = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.215686, 0.27451, 0.0666667, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -45,7 +45,7 @@ expand_margin_top = 4.0
 expand_margin_bottom = 4.0
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 0, 0, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -84,9 +84,9 @@ Button/constants/hseparation = 2
 Button/fonts/font = SubResource( 1 )
 Button/styles/disabled = null
 Button/styles/focus = null
-Button/styles/hover = SubResource( 6 )
+Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 3 )
-Button/styles/pressed = SubResource( 7 )
+Button/styles/pressed = SubResource( 4 )
 Panel/styles/panel = SubResource( 5 )
 RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0.49, 0.49, 0.49, 1 )

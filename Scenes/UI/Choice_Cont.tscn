@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Themes/Def_Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/UI/Dialog/ChoiceDisplay.cs" type="Script" id=2]
+[ext_resource path="res://Scripts/UI/Dialog/ChoiceButton.cs" type="Script" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -34,10 +35,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="Buttons/ButtonContainer"]
+[node name="Choice_btn" type="Button" parent="Buttons/ButtonContainer"]
 margin_right = 329.0
 margin_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource( 1 )
 text = "Ah sí?"
+script = ExtResource( 3 )

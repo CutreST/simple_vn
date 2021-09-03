@@ -14,10 +14,10 @@ namespace UI.Dialog
 
         public ChoiceSystem ChoiceSys{ get; set; }
 
-        List<Button> _unusedButtons;
-        List<Button> _usedButtons;
+        List<ChoiceButton> _unusedButtons;
+        List<ChoiceButton> _usedButtons;
 
-        Button _original_btn;
+        ChoiceButton _original_btn;
         VBoxContainer _container;
 
         public override void _EnterTree()
@@ -25,14 +25,14 @@ namespace UI.Dialog
             base._EnterTree();
             _container = this.TryGetFromChild_Rec<VBoxContainer>(CONTAINER_NAME);
 
-            _unusedButtons = new List<Button>();
-            _usedButtons = new List<Button>();
+            _unusedButtons = new List<ChoiceButton>();
+            _usedButtons = new List<ChoiceButton>();
 
             //check for children buttons and add
-            Button button;
+            ChoiceButton button;
             for (int i = 0; i < _container.GetChildCount(); i++){
-                if(_container.GetChild(i).GetType() == typeof(Button)){
-                    button = _container.GetChild<Button>(i);
+                if(_container.GetChild(i).GetType() == typeof(ChoiceButton)){
+                    button = _container.GetChild<ChoiceButton>(i);
                     _unusedButtons.Add(button);
                     _original_btn = button;
                     button.Hide();
@@ -62,14 +62,14 @@ namespace UI.Dialog
             for (int i = 0; i < choices.Count; i++)
             {
                 //spawn button;
-                this.SpawnButton(choices[i]);
+                this.SpawnButton(choices[i], i);
             }
         }
 
-        private void SpawnButton(in string text){
-            Button temp;
+        private void SpawnButton(in string text, in int index){
+            ChoiceButton temp;
             if(_unusedButtons.Count == 0){
-                temp = (Button)_original_btn.Duplicate();
+                temp = (ChoiceButton)_original_btn.Duplicate();
                 _container.AddChild(temp);
             }else{
                 temp = _unusedButtons[0];
@@ -79,6 +79,7 @@ namespace UI.Dialog
             _usedButtons.Add(temp);
             temp.Show();
             temp.Text = text;
+            temp.Index = index + 1;
         }
 
     }
