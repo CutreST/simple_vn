@@ -47,12 +47,10 @@
 		</dial>
 	</dialogs>
 	<choices>
-		<ch id="believe_ans_yes">
-			<sent>Yes, I believe.</sent>		
-		</ch>
-		<ch id="believe_ans_no">
-			<sent>No, that's not my thing.</sent>		
-		</ch>
+		<ch_group id="First test">
+			<ch id="first_btn">Yes, this is the first button.</ch>
+			<ch id="second_btn">No, but this is the second button.</ch>			
+		</ch_group>
 		
 	</choices>
 </Full_Dial>
