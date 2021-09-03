@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://new_script.cs" type="Script" id=1]
+
+[node name="Test_Stage" type="Node2D"]
+script = ExtResource( 1 )
+RELATIVE_PATH = "Loc/en"
+ID_LOADER = "believe_yes"
+ID_DEF = "id"

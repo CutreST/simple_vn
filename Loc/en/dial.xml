@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Full_Dial xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dialogs>
+		<dial id="welcome">
+			<sent>Hello and welcome to this mini visual novel.</sent>
+			<sent>I hope you enjoy it.</sent>
+			<sent>Well, this is sort of a test, so well, no more to put.</sent>
+			<sent>And, now, the game.</sent>
+		</dial>
+		<dial id="believe_ques">
+			<sent>Hello, how are you?</sent>
+			<sent>Want to make sure that we're on the same page.</sent>
+			<sent>Do you believe in Horoscope?</sent>			
+		</dial>
+		<dial id="believe_yes">
+			<sent>Buah, that's amazing, me too.</sent>
+			<sent>I expect [color=red]great things[/color] from you.</sent>
+		</dial>
+		<dial id="believe_no">
+			<sent>Well, I respect that.</sent>
+			<sent>I truly wish you good luck.</sent>
+		</dial>
+		<dial id="test_a">
+			<sent>Ok, now this is the first sentence.</sent>
+			<sent>And this is a second sentence.</sent>
+			<sent>On this, is the [color=blue]color blue[/color] the protagonist</sent>
+			<sent>And now, [color=#517c0c]a custom color[/color] is the protagonist</sent>
+		</dial>
+		<dial id="test_b">
+			<sent>Second test. Test pourposes, you know what i mean.</sent>
+			<sent>Sentence, sentence, sentence.</sent>
+			<sent>Japanese, it works? こんにちは雪子ちゃん、元気ですか。</sent>
+			<sent>Spanish, it works? ¿Hola cómo estás, Ñuñí? </sent>
+			<sent>Catalonian, it works? Hola, com va, Guèrça? </sent>
+			<sent>Esperanto, it works? Saluton, kiel vi fartas, Ĝijŭ? </sent>
+			<sent>English, it works? Hello, how are you, Peter? </sent>
+		</dial>
+	</dialogs>
+	<choices>
+		<ch id="believe_ans_yes">
+			<sent>Yes, I believe.</sent>		
+		</ch>
+		<ch id="believe_ans_no">
+			<sent>No, that's not my thing.</sent>		
+		</ch>
+		
+	</choices>
+</Full_Dial>

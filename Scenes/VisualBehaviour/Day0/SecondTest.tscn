@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/DialogNode.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/Base Nodes/SequenceNode.cs" type="Script" id=2]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/EsceneLoader.cs" type="Script" id=3]
+
+[node name="SecondTest" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Second_Text_A" type="Node" parent="."]
+script = ExtResource( 1 )
+DIAL_ID = "test_a"
+
+[node name="Second_Text_B" type="Node" parent="."]
+script = ExtResource( 1 )
+DIAL_ID = "test_b"
+
+[node name="SceneLoader(wrong)" type="Node" parent="."]
+script = ExtResource( 3 )
+SCENE_PATH = "res://Scenes/Node2D.tscn"
