@@ -5,7 +5,7 @@
 			<sent>Hello and welcome to this mini visual novel.</sent>
 			<sent>I hope you enjoy it.</sent>
 			<sent>Well, this is sort of a test, so well, no more to put.</sent>
-			<sent>And, now, the game.</sent>
+			<sent>And, now, some explanations. Finished first node.</sent>
 		</dial>
 		<dial id="believe_ques">
 			<sent>Hello, how are you?</sent>
@@ -19,6 +19,15 @@
 		<dial id="believe_no">
 			<sent>Well, I respect that.</sent>
 			<sent>I truly wish you good luck.</sent>
+		</dial>
+		<dial id="Explanation">
+			<sent>This visual novel is suposed to be done only by [color=green]Godot's Control nodes [/color] and [color=red]custom c# code[/color].</sent>
+			<sent>First, I have an [color=blue]XML[/color] with the text needed. This ways is easy to write the contents, think about the story and write translations.</sent>
+			<sent>Then, I have a [color=green]Behaviour Tree[/color] to control the flow. With this, I can create a looooot of scenes that are the little parts of the VN.</sent>
+			<sent>For the text, I have the Display system. As I use a custom Entity-Component-System aproximation, the [color=green] Behaviour Tree[/color] nor it's nodes has to worry about it.</sent>
+			<sent>So, this intro Scene has 3 [color=green]behaviour tree nodes[/color], 1 for the previous text, 1 for this text and the next for changing the scene.</sent>
+			<sent>And now, I'll change the scene with new nodes, new text!</sent>
+			
 		</dial>
 		<dial id="test_a">
 			<sent>Ok, now this is the first sentence.</sent>
@@ -34,6 +43,7 @@
 			<sent>Catalonian, it works? Hola, com va, Guèrça? </sent>
 			<sent>Esperanto, it works? Saluton, kiel vi fartas, Ĝijŭ? </sent>
 			<sent>English, it works? Hello, how are you, Peter? </sent>
+			<sent>Thanks for watching! </sent>
 		</dial>
 	</dialogs>
 	<choices>

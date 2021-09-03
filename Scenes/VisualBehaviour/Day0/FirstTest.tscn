@@ -13,7 +13,7 @@ DIAL_ID = "welcome"
 
 [node name="First_Text_B" type="Node" parent="."]
 script = ExtResource( 1 )
-DIAL_ID = "believe_ques"
+DIAL_ID = "Explanation"
 
 [node name="SceneLoader(right)" type="Node" parent="."]
 script = ExtResource( 3 )
