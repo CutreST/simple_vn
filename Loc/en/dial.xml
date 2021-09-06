@@ -1,56 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Full_Dial xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<dialogs>
-		<dial id="welcome">
-			<sent>Hello and welcome to this mini visual novel.</sent>
-			<sent>I hope you enjoy it.</sent>
-			<sent>Well, this is sort of a test, so well, no more to put.</sent>
-			<sent>And, now, some explanations. Finished first node.</sent>
-		</dial>
-		<dial id="believe_ques">
-			<sent>Hello, how are you?</sent>
-			<sent>Want to make sure that we're on the same page.</sent>
-			<sent>Do you believe in Horoscope?</sent>			
-		</dial>
-		<dial id="believe_yes">
-			<sent>Buah, that's amazing, me too.</sent>
-			<sent>I expect [color=red]great things[/color] from you.</sent>
-		</dial>
-		<dial id="believe_no">
-			<sent>Well, I respect that.</sent>
-			<sent>I truly wish you good luck.</sent>
-		</dial>
-		<dial id="Explanation">
-			<sent>This visual novel is suposed to be done only by [color=green]Godot's Control nodes [/color] and [color=red]custom c# code[/color].</sent>
-			<sent>First, I have an [color=blue]XML[/color] with the text needed. This ways is easy to write the contents, think about the story and write translations.</sent>
-			<sent>Then, I have a [color=green]Behaviour Tree[/color] to control the flow. With this, I can create a looooot of scenes that are the little parts of the VN.</sent>
-			<sent>For the text, I have the Display system. As I use a custom Entity-Component-System aproximation, the [color=green] Behaviour Tree[/color] nor it's nodes has to worry about it.</sent>
-			<sent>So, this intro Scene has 3 [color=green]behaviour tree nodes[/color], 1 for the previous text, 1 for this text and the next for changing the scene.</sent>
-			<sent>And now, I'll change the scene with new nodes, new text!</sent>
-			
-		</dial>
-		<dial id="test_a">
-			<sent>Ok, now this is the first sentence.</sent>
-			<sent>And this is a second sentence.</sent>
-			<sent>On this, is the [color=blue]color blue[/color] the protagonist</sent>
-			<sent>And now, [color=#517c0c]a custom color[/color] is the protagonist</sent>
-		</dial>
-		<dial id="test_b">
-			<sent>Second test. Test pourposes, you know what i mean.</sent>
-			<sent>Sentence, sentence, sentence.</sent>
-			<sent>Japanese, it works? こんにちは雪子ちゃん、元気ですか。</sent>
-			<sent>Spanish, it works? ¿Hola cómo estás, Ñuñí? </sent>
-			<sent>Catalonian, it works? Hola, com va, Guèrça? </sent>
-			<sent>Esperanto, it works? Saluton, kiel vi fartas, Ĝijŭ? </sent>
-			<sent>English, it works? Hello, how are you, Peter? </sent>
-			<sent>Thanks for watching! </sent>
-		</dial>
+		<dial_group id="FirstTest">
+			<dial id="welcome">
+				<sent>Hello and welcome to this mini visual novel.</sent>
+				<sent>I hope you enjoy it.</sent>
+				<sent>Well, this is sort of a test, so well, no more to put.</sent>
+				<sent>And, now, some explanations. Finished first node.</sent>
+			</dial>
+				<dial id="Explanation">
+				<sent>This visual novel is suposed to be done only by [color=green]Godot's Control nodes [/color] and [color=red]custom c# code[/color].</sent>
+				<sent>First, I have an [color=blue]XML[/color] with the text needed. This ways is easy to write the contents, think about the story and write translations.</sent>
+				<sent>Then, I have a [color=green]Behaviour Tree[/color] to control the flow. With this, I can create a looooot of scenes that are the little parts of the VN.</sent>
+				<sent>For the text, I have the Display system. As I use a custom Entity-Component-System aproximation, the [color=green] Behaviour Tree[/color] nor it's nodes has to worry about it.</sent>
+				<sent>So, this intro Scene has 3 [color=green]behaviour tree nodes[/color], 1 for the previous text, 1 for this text and the next for changing the scene.</sent>					
+				<sent>And now, I'll change the scene with new nodes, new text!</sent>					
+			</dial>	
+		</dial_group>
+		<dial_group id="SecondTest">
+			<dial id="test_a">
+				<sent>Ok, now this is the first sentence.</sent>
+				<sent>And this is a second sentence.</sent>
+				<sent>On this, is the [color=blue]color blue[/color] the protagonist</sent>
+				<sent>And now, [color=#517c0c]a custom color[/color] is the protagonist</sent>
+			</dial>
+			<dial id="test_b">		
+				<sent>Second test. Test pourposes, you know what i mean.</sent>
+				<sent>Sentence, sentence, sentence.</sent>
+				<sent>Japanese, it works? こんにちは雪子ちゃん、元気ですか。</sent>
+				<sent>Spanish, it works? ¿Hola cómo estás, Ñuñí? </sent>
+				<sent>Catalonian, it works? Hola, com va, Guèrça? </sent>
+				<sent>Esperanto, it works? Saluton, kiel vi fartas, Ĝijŭ? </sent>
+				<sent>English, it works? Hello, how are you, Peter? </sent>
+				<sent>Thanks for watching! </sent>
+			</dial>		
+		</dial_group>
+		<dial_group id="UNUSED">
+			<dial id="believe_ques">
+				<sent>Hello, how are you?</sent>
+				<sent>Want to make sure that we're on the same page.</sent>
+				<sent>Do you believe in Horoscope?</sent>			
+			</dial>
+			<dial id="believe_yes">
+				<sent>Buah, that's amazing, me too.</sent>
+				<sent>I expect [color=red]great things[/color] from you.</sent>
+			</dial>
+			<dial id="believe_no">
+				<sent>Well, I respect that.</sent>
+				<sent>I truly wish you good luck.</sent>
+			</dial>				
+		</dial_group>	
+		<dial_group id="ChoiceTest">
+			<dial id="choice_test_a">
+				<sent>Ok, now it's time to test simple choices.</sent>
+				<sent>First we're gonna write this node that ends...</sent>
+				<sent>...now!</sent>
+			</dial>
+			<dial id="choice_test_b">
+				<sent>And we have a second node to check things.</sent>
+				<sent>On the final game we can optimize this in so many ways...</sent>
+				<sent>...but now is time to test thinks, don't you agree?</sent>
+			</dial>		
+		</dial_group>		
 	</dialogs>
 	<choices>
-		<ch_group id="First test">
-			<ch id="first_btn">Yes, this is the first button.</ch>
-			<ch id="second_btn">No, but this is the second button.</ch>			
-		</ch_group>
-		
+		<ch_group id="ChoiceTest">
+			<ch id="first_btn">
+				<sent>Yes, it's time to check my first choice</sent>
+			</ch>
+			<ch id="second_btn">
+				<sent>No, I don't want to test.</sent>
+			</ch>			
+			<ch id="third_btn">
+				<sent>...</sent>
+			</ch>			
+		</ch_group>		
 	</choices>
 </Full_Dial>

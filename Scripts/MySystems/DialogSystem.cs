@@ -2,6 +2,7 @@ using Godot;
 using System;
 using UI.Dialog;
 using MySystems.MyInput;
+using Entities.BehaviourTree.VN_Nodes;
 
 namespace MySystems
 {
@@ -26,6 +27,9 @@ namespace MySystems
             DialDisp.PutTextToDisplay(text);
             MyManager.AddToStack(this);
         }
+
+        
+
 
         #region MySystem methods
         public override void OnEnterSystem(params object[] obj)

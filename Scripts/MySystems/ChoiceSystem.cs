@@ -1,3 +1,4 @@
+using Entities.BehaviourTree.VN_Nodes;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace MySystems
         public ChoiceSystem() : base(null, null) { }
         private const string DISP_PATH = "res://Scenes/UI/Choice_Cont.tscn";
         public ChoiceDisplay ChoiceDisp{ get; set; }
+
+        public ChoiceSelector Selector { get; private set; }
 
         #region stack
         public override void OnEnterStack()
@@ -42,9 +45,10 @@ namespace MySystems
 
             //cargamos
             ChoiceDisp = GD.Load<PackedScene>(DISP_PATH).Instance() as ChoiceDisplay;
-
+            MyManager.NodeManager.AddChild(ChoiceDisp);
+            ChoiceDisp.MyHide();
             //chekear si existe o algo...
-            
+
         }
 
         public override void OnExitSystem(params object[] obj)
@@ -54,15 +58,14 @@ namespace MySystems
 
         #endregion
 
-        public void ShowChoices(){
-            List<string> testA = new List<string>();
-            testA.Add("Choice one!");
-            testA.Add("Choice two!");
-            testA.Add("Choice three!");
-            testA.Add("Choice four!");
+        public void ShowSelection(in ChoiceSelector selector){
+            this.Selector = selector;
+            MyManager.AddToStack(this);
 
-            ChoiceDisp.ShowChoices(testA);
+            //cargamos el display
+            ChoiceDisp.ShowChoices(Selector.Routes);
         }
+
 
     }
 }

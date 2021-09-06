@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/DialogNode.cs" type="Script" id=1]
 [ext_resource path="res://Scripts/Entity/BehaviourTree/Base Nodes/SequenceNode.cs" type="Script" id=2]
-[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/EsceneLoader.cs" type="Script" id=3]
 
 [node name="FirstTest" type="Node2D"]
 script = ExtResource( 2 )
@@ -14,7 +13,3 @@ DIAL_ID = "welcome"
 [node name="First_Text_B" type="Node" parent="."]
 script = ExtResource( 1 )
 DIAL_ID = "Explanation"
-
-[node name="SceneLoader(right)" type="Node" parent="."]
-script = ExtResource( 3 )
-SCENE_PATH = "res://Scenes/VisualBehaviour/Day0/SecondTest.tscn"

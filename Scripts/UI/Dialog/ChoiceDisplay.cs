@@ -45,24 +45,26 @@ namespace UI.Dialog
                 System_Manager.GetInstance(this).TryGetSystem<ChoiceSystem>(out ch, true);
                 ChoiceSys = ch;
             }
-            this.TestChoices();
-        }
+            
+        }        
 
-        private void TestChoices(){
-            List<string> testA = new List<string>();
-            testA.Add("Choice one!");
-            testA.Add("Choice two!");
-            testA.Add("Choice three!");
-            testA.Add("Choice four!");
+        public void ShowChoices(in List<Entities.BehaviourTree.VN_Nodes.ChoiceRoute> choices){
+            base.Show();
 
-            this.ShowChoices(testA);
-        }
-
-        public void ShowChoices(in List<string> choices){
             for (int i = 0; i < choices.Count; i++)
             {
                 //spawn button;
-                this.SpawnButton(choices[i], i);
+                this.SpawnButton(choices[i].Text, i);
+            }
+        }
+
+        public void MyHide(){
+            base.Hide();
+            for (int i = _usedButtons.Count - 1; i > -1; i--){
+                _usedButtons[i].Text = "";
+                _usedButtons[i].Hide();
+                _unusedButtons.Add(_usedButtons[i]);
+                _usedButtons.RemoveAt(i);
             }
         }
 

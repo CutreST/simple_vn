@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/DialogNode.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/Base Nodes/SequenceNode.cs" type="Script" id=2]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ChoiceRoute.cs" type="Script" id=3]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ChoiceSelector.cs" type="Script" id=4]
+
+[node name="ChoiceTest" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Choice_Text_A" type="Node" parent="."]
+script = ExtResource( 1 )
+DIAL_ID = "choice_test_a"
+
+[node name="Choice_Text_B" type="Node" parent="."]
+script = ExtResource( 1 )
+DIAL_ID = "choice_test_b"
+
+[node name="Choice_Selector" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Choice_A" type="Node" parent="Choice_Selector"]
+script = ExtResource( 3 )
+CHOICE_ID = "first_btn"
+TO_LOAD = 1
+
+[node name="Choice_B" type="Node" parent="Choice_Selector"]
+script = ExtResource( 3 )
+CHOICE_ID = "second_btn"
+TO_LOAD = 1
+
+[node name="Choice_C" type="Node" parent="Choice_Selector"]
+script = ExtResource( 3 )
+CHOICE_ID = "third_btn"
+TO_LOAD = 1

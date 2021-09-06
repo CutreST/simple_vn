@@ -80,75 +80,17 @@ namespace Entities.BehaviourTree
 
         public void EnterNode(in BaseNode node)
         {
-            _currentNode = node;
-            /*
-            if (Q == null)
-            {
-                Q = new Queue<BaseNode>();
-            }
-
-            if (_currentNode != null)
-            {
-                if (_currentNode == node)
-                    return;
-
-                _nodeStack.Push(_currentNode);
-            }
-            _currentNode = node;
-            _currentNode.OnEnter(this);*/
+            _currentNode = node;                      
         }
 
         Queue<BaseNode> Q;
 
         public void ExitNode(in BaseNode node){
-            /*if(node.NodeState == States.RUNNING){
-                if(Q.Peek() != node){
-                    Q.Enqueue(node);
-                }
-            }else{
-                //check if the node
-            }*/
+            
             if(node.NodeState == States.RUNNING){
                 _currentNode = node;
             }
-        }
-
-        /*
-        public void ExitNode(in BaseNode node)
-        {
-            if (node.NodeState == States.RUNNING)
-            {
-                if (Q.Count == 0 || Q.Peek() != node)
-                {
-                    Q.Enqueue(node);
-                }              
-            }
-            else
-            {
-                if (Q.Count > 1 && Q.Peek() == node)
-                {                    
-                    //vaciamos pòrque este no nos importa ya.
-                    Q.Dequeue();
-
-                    _currentNode = Q.Dequeue();
-                    BaseNode a = _currentNode;
-
-                   if(_currentNode == _nodeStack.Peek()){
-                       _nodeStack.Pop();
-                   }
-                    //BaseNode b = _nodeStack.Pop();
-                    //GD.PrintErr("Node are equald: ", "\na: ", a.Name, "\nb: ", b.Name, "\nEquald: ", (a == b));
-                    _currentNode.Tick(this);
-                    return;
-                }
-                else if(Q.Count == 1 && Q.Peek() == node){
-                    Q.Dequeue();
-                    _currentNode = _nodeStack.Pop();
-                }
-                if (_currentNode == node)
-                    _currentNode = _nodeStack.Pop();
-            }
-        }*/
+        }       
 
         public void MyPhysic(in float delta)
         {

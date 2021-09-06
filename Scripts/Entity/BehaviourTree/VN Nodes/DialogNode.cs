@@ -18,7 +18,7 @@ namespace Entities.BehaviourTree.VN_Nodes
         public override void InitNode(in TreeController controller)
         {
             //cargamos mierdas
-            text = MySystems.LoadXML.LoadXmlElement(DIAL_ID, TO_LOAD);
+            text = MySystems.LoadXML.LoadXmlElement(controller.Root.Name, DIAL_ID, TO_LOAD);
             ConsoleSystem.Write("Initialized " + base.Name);
         }
 
