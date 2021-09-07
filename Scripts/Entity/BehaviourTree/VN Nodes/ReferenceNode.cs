@@ -38,7 +38,16 @@ namespace Entities.BehaviourTree.VN_Nodes
 
         public override States Tick(in TreeController controller)
         {
-            return base.Tick(controller);
+            if (base.NodeState != States.RUNNING)
+            {
+                base.ChangeNodeStatus(controller, States.RUNNING);
+                return States.SUCCESS;
+            }
+            else
+            {
+
+                return base.Tick(controller);
+            }
         }
     }
 }

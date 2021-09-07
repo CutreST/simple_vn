@@ -66,10 +66,7 @@ namespace Entities.BehaviourTree.VN_Nodes
                 Selection = -1;
             }
 
-            return base.NodeState;
-            //metemos refencia con esto
-            //nos veolverá un número o algo
-            //le damos al hijo que toca
+            return base.NodeState;        
 
         }
 

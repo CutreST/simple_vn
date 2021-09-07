@@ -42,6 +42,10 @@ TO_LOAD = 1
 script = ExtResource( 1 )
 DIAL_ID = "route_b"
 
+[node name="REF_choice_selector2" type="Node" parent="Choice_Selector/Choice_B"]
+script = ExtResource( 5 )
+NODE_PATH = "Choice_Selector"
+
 [node name="Choice_C" type="Node" parent="Choice_Selector"]
 script = ExtResource( 3 )
 CHOICE_ID = "third_btn"
@@ -50,3 +54,7 @@ TO_LOAD = 1
 [node name="Route_C" type="Node" parent="Choice_Selector/Choice_C"]
 script = ExtResource( 1 )
 DIAL_ID = "route_c"
+
+[node name="REF_choice_selector3" type="Node" parent="Choice_Selector/Choice_C"]
+script = ExtResource( 5 )
+NODE_PATH = "Choice_Selector"
