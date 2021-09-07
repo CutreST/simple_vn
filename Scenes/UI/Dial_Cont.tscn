@@ -12,12 +12,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 LBL_DIAL_NAME = "Lbl_Dialog"
-TIME_TO_SHOW = 0.05
+TIME_TO_SHOW = 0.02
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 64.0
-margin_top = 424.0
-margin_right = 952.0
+margin_left = 128.0
+margin_top = 448.0
+margin_right = 904.0
 margin_bottom = 576.0
 theme = ExtResource( 2 )
 __meta__ = {
@@ -27,7 +27,7 @@ __meta__ = {
 [node name="Lbl_Dialog" type="RichTextLabel" parent="Panel"]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 864.0
+margin_right = 760.0
 margin_bottom = 44.0
 theme = ExtResource( 2 )
 bbcode_enabled = true

@@ -12,7 +12,7 @@ font_data = ExtResource( 1 )
 fallback/0 = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.215686, 0.27451, 0.0666667, 1 )
+bg_color = Color( 0.215686, 0.27451, 0.0666667, 0.882353 )
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -29,7 +29,7 @@ expand_margin_bottom = 4.0
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.443137, 0.278431, 0.156863, 1 )
+bg_color = Color( 0.443137, 0.278431, 0.156863, 0.784314 )
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -63,7 +63,7 @@ expand_margin_bottom = 4.0
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.392157, 0.258824, 0.341176, 1 )
+bg_color = Color( 0.392157, 0.258824, 0.341176, 0.784314 )
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5

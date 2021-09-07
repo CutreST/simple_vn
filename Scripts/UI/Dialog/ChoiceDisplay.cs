@@ -64,6 +64,7 @@ namespace UI.Dialog
                 _usedButtons[i].Text = "";
                 _usedButtons[i].Hide();
                 _unusedButtons.Add(_usedButtons[i]);
+                //_container.RemoveChild(_usedButtons[i]);
                 _usedButtons.RemoveAt(i);
             }
         }
@@ -81,7 +82,7 @@ namespace UI.Dialog
             _usedButtons.Add(temp);
             temp.Show();
             temp.Text = text;
-            temp.Index = index + 1;
+            temp.Index = index;
         }
 
     }

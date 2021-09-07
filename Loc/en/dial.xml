@@ -57,10 +57,23 @@
 				<sent>...now!</sent>
 			</dial>
 			<dial id="choice_test_b">
-				<sent>And we have a second node to check things.</sent>
-				<sent>On the final game we can optimize this in so many ways...</sent>
-				<sent>...but now is time to test thinks, don't you agree?</sent>
+				<sent>And this is a second node that also have text...</sent>
+				<sent>When making the final game we can simplify all this nodes.</sent>
+				<sent>But now is time to test thinks, don't you agree?</sent>
 			</dial>		
+			<dial id="route_a">
+				<sent>That's awesome! We're on the same page!</sent>
+				<sent>By the way, this is route A.</sent>
+			</dial>
+			<dial id="route_b">
+				<sent>Well, I don't really care. You tested the choice selection. Hahahaha 🤣🤣</sent>
+				<sent>Yes, you guessed right, this is route B.</sent>
+			</dial>
+			<dial id="route_c">
+				<sent>...</sent>
+				<sent>...</sent>
+				<sent>I can also play this game if you want. This is route C, in case you care...</sent>
+			</dial>
 		</dial_group>		
 	</dialogs>
 	<choices>

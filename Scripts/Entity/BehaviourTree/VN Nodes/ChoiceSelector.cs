@@ -62,6 +62,8 @@ namespace Entities.BehaviourTree.VN_Nodes
                 ChangeNodeStatus(controller, States.RUNNING);
             }else{
                 ChangeNodeStatus(controller, States.SUCCESS);
+                Routes[Selection].Tick(controller);
+                Selection = -1;
             }
 
             return base.NodeState;

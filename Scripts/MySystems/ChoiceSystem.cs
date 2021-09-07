@@ -11,9 +11,22 @@ namespace MySystems
     {
         public ChoiceSystem() : base(null, null) { }
         private const string DISP_PATH = "res://Scenes/UI/Choice_Cont.tscn";
-        public ChoiceDisplay ChoiceDisp{ get; set; }
+        public ChoiceDisplay ChoiceDisp { get; set; }
 
         public ChoiceSelector Selector { get; private set; }
+        private int index;
+
+        public int Index
+        {
+            get => index;
+            set
+            {
+                index = value;
+                Selector.Selection = index;
+                ChoiceDisp.MyHide();
+                MyManager.RemoveFromStack(this);
+            }
+        }
 
         #region stack
         public override void OnEnterStack()
@@ -58,12 +71,18 @@ namespace MySystems
 
         #endregion
 
-        public void ShowSelection(in ChoiceSelector selector){
+        public void ShowSelection(in ChoiceSelector selector)
+        {
             this.Selector = selector;
             MyManager.AddToStack(this);
 
             //cargamos el display
             ChoiceDisp.ShowChoices(Selector.Routes);
+
+            //pillamos el dialgo sys
+            DialogSystem dial;
+            MyManager.TryGetSystem<DialogSystem>(out dial);
+            dial.DialDisp.Show();
         }
 
 
