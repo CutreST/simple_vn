@@ -1,4 +1,5 @@
 using Godot;
+using MySystems.VisualNovel;
 using MySystems;
 using System;
 

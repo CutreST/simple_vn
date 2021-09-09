@@ -4,7 +4,7 @@ using UI.Dialog;
 using MySystems.MyInput;
 using Entities.BehaviourTree.VN_Nodes;
 
-namespace MySystems
+namespace MySystems.VisualNovel
 {
 
     public class DialogSystem : Visual_SystemBase

@@ -1,0 +1,139 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Entity/BehaviourTree/Base Nodes/SequenceNode.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ChangeBackground.cs" type="Script" id=2]
+[ext_resource path="res://Sprites/Backgrounds/background.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/DialogNode.cs" type="Script" id=4]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ChoiceRoute.cs" type="Script" id=5]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ChoiceSelector.cs" type="Script" id=6]
+[ext_resource path="res://Sprites/Backgrounds/country-platform-preview.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ReferenceNode.cs" type="Script" id=8]
+[ext_resource path="res://Sprites/Backgrounds/Back_Test.tres" type="Texture" id=9]
+[ext_resource path="res://Sprites/Backgrounds/Back_Test_2.tres" type="Texture" id=10]
+
+[node name="BackTest" type="Node"]
+script = ExtResource( 1 )
+
+[node name="chng_bk_def" type="Node" parent="."]
+script = ExtResource( 2 )
+background = ExtResource( 3 )
+
+[node name="Saluton" type="Node" parent="."]
+script = ExtResource( 4 )
+DIAL_ID = "saluton"
+
+[node name="Saluton_choice" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="Saluton_ch_a" type="Node" parent="Saluton_choice"]
+script = ExtResource( 5 )
+CHOICE_ID = "saluton_ch_a"
+TO_LOAD = 1
+
+[node name="chng_bck_street2" type="Node" parent="Saluton_choice/Saluton_ch_a"]
+script = ExtResource( 2 )
+background = ExtResource( 10 )
+
+[node name="back_street" type="Node" parent="Saluton_choice/Saluton_ch_a"]
+script = ExtResource( 4 )
+DIAL_ID = "back_street"
+
+[node name="back_street_choice" type="Node" parent="Saluton_choice/Saluton_ch_a"]
+script = ExtResource( 6 )
+
+[node name="back_street_yes" type="Node" parent="Saluton_choice/Saluton_ch_a/back_street_choice"]
+script = ExtResource( 5 )
+CHOICE_ID = "back_street_yes"
+TO_LOAD = 1
+
+[node name="back_street_yes_anw" type="Node" parent="Saluton_choice/Saluton_ch_a/back_street_choice/back_street_yes"]
+script = ExtResource( 4 )
+DIAL_ID = "back_street_yes_anw"
+
+[node name="chng_back_back_1" type="Node" parent="Saluton_choice/Saluton_ch_a/back_street_choice/back_street_yes"]
+script = ExtResource( 2 )
+background = ExtResource( 9 )
+
+[node name="back_street_2" type="Node" parent="Saluton_choice/Saluton_ch_a/back_street_choice/back_street_yes"]
+script = ExtResource( 4 )
+DIAL_ID = "back_street_2"
+
+[node name="REF_NODE_START" type="Node" parent="Saluton_choice/Saluton_ch_a/back_street_choice/back_street_yes"]
+script = ExtResource( 8 )
+NODE_PATH = "chng_bk_def"
+
+[node name="back_street_no" type="Node" parent="Saluton_choice/Saluton_ch_a/back_street_choice"]
+script = ExtResource( 5 )
+CHOICE_ID = "back_street_no"
+TO_LOAD = 1
+
+[node name="back_street_no_anw" type="Node" parent="Saluton_choice/Saluton_ch_a/back_street_choice/back_street_no"]
+script = ExtResource( 4 )
+DIAL_ID = "back_street_no_anw"
+
+[node name="REF_FOREST" type="Node" parent="Saluton_choice/Saluton_ch_a/back_street_choice/back_street_no"]
+script = ExtResource( 8 )
+NODE_PATH = "Saluton_choice/Saluton_ch_b/chng_back_forest"
+
+[node name="Saluton_ch_b" type="Node" parent="Saluton_choice"]
+script = ExtResource( 5 )
+CHOICE_ID = "saluton_ch_b"
+TO_LOAD = 1
+
+[node name="chng_back_forest" type="Node" parent="Saluton_choice/Saluton_ch_b"]
+script = ExtResource( 2 )
+background = ExtResource( 7 )
+
+[node name="Forest" type="Node" parent="Saluton_choice/Saluton_ch_b"]
+script = ExtResource( 4 )
+DIAL_ID = "forest"
+
+[node name="Forest_choice" type="Node" parent="Saluton_choice/Saluton_ch_b"]
+script = ExtResource( 6 )
+
+[node name="forest_ch_a" type="Node" parent="Saluton_choice/Saluton_ch_b/Forest_choice"]
+script = ExtResource( 5 )
+CHOICE_ID = "forest_ch_a"
+TO_LOAD = 1
+
+[node name="forest_yes" type="Node" parent="Saluton_choice/Saluton_ch_b/Forest_choice/forest_ch_a"]
+script = ExtResource( 4 )
+DIAL_ID = "forest_yes"
+
+[node name="chng_back_start" type="Node" parent="Saluton_choice/Saluton_ch_b/Forest_choice/forest_ch_a"]
+script = ExtResource( 2 )
+background = ExtResource( 3 )
+
+[node name="REF_CHOICE" type="Node" parent="Saluton_choice/Saluton_ch_b/Forest_choice/forest_ch_a"]
+script = ExtResource( 8 )
+NODE_PATH = "Saluton_choice"
+
+[node name="forest_ch_b" type="Node" parent="Saluton_choice/Saluton_ch_b/Forest_choice"]
+script = ExtResource( 5 )
+CHOICE_ID = "forest_ch_b"
+TO_LOAD = 1
+
+[node name="forest_no" type="Node" parent="Saluton_choice/Saluton_ch_b/Forest_choice/forest_ch_b"]
+script = ExtResource( 4 )
+DIAL_ID = "forest_no"
+
+[node name="chng_back_start2" type="Node" parent="Saluton_choice/Saluton_ch_b/Forest_choice/forest_ch_b"]
+script = ExtResource( 2 )
+background = ExtResource( 3 )
+
+[node name="REF_START" type="Node" parent="Saluton_choice/Saluton_ch_b/Forest_choice/forest_ch_b"]
+script = ExtResource( 8 )
+NODE_PATH = "Saluton"
+
+[node name="Saluton_ch_c" type="Node" parent="Saluton_choice"]
+script = ExtResource( 5 )
+CHOICE_ID = "saluton_ch_c"
+TO_LOAD = 1
+
+[node name="nothing" type="Node" parent="Saluton_choice/Saluton_ch_c"]
+script = ExtResource( 4 )
+DIAL_ID = "nothing"
+
+[node name="REF_START_SALUTON" type="Node" parent="Saluton_choice/Saluton_ch_c"]
+script = ExtResource( 8 )
+NODE_PATH = "Saluton"

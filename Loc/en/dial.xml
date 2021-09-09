@@ -66,7 +66,7 @@
 				<sent>By the way, this is route A.</sent>
 			</dial>
 			<dial id="route_b">
-				<sent>Well, I don't really care. You tested the choice selection. Hahahaha 🤣🤣</sent>
+				<sent>Well, I don't really care. You tested the choice selection. Hahahaha</sent>
 				<sent>Yes, you guessed right, this is route B.</sent>
 			</dial>
 			<dial id="route_c">
@@ -75,11 +75,89 @@
 				<sent>I can also play this game if you want. This is route C, in case you care...</sent>
 			</dial>
 		</dial_group>		
+		<dial_group id="BackTest">
+			<dial id="empty">
+				<sent>empty</sent>
+			</dial>
+			<dial id="saluton">
+				<sent>Hello, welcome to this new test.</sent>
+				<sent>Until now, you only could read and choose some things without further implications.</sent>
+				<sent>But that had changed. Now you can move freely in this endless loop that I created.</sent>
+				<sent>Truth to be told, I only want to test some things. And... you can't move freely really. So, do you want to come with me?</sent>
+			</dial>
+			<dial id="forest">
+				<sent>Well, you didn't want to follow me. So, this is the only place that you can go.</sent>
+				<sent>You know, there's nothing in here. Well, there's nothing inside this [color=red]life[/color], I think.</sent>
+				<sent>You can wait all you want, but there's no hide button so... incomplete, always incomplete...</sent>
+				<sent>Want to go back?</sent>
+			</dial>
+			<dial id="forest_no">
+				<sent>No, you don't really have an option.</sent>
+				<sent>The [color=red]future[/color] is already written in a simple [color=green]XML file[/color] and in a [color=blue]Godot scene[/color].</sent>
+				<sent>So, you'll start again! [color=black]Hahahahahahaha[/color].</sent>
+			</dial>
+			<dial id="forest_yes">
+				<sent>Ok, back to the choice!</sent>
+				<sent>So, do you want [color=red]NOW[/color] to follow me?</sent>
+			</dial>
+			<dial id="back_street">
+				<sent>Ok, we are here now. As you can see, there's no much to see.</sent>
+				<sent>If you expect some kind of development or some good writing, experience,...</sent>
+				<sent>Look at this. All the assets are from the same artist named [color=green]Luis Zuno[/color] from [color=blue]ansimuz.com[/color].</sent>
+				<sent>There's no sound, no animations, nothing except the basics onto this world.</sent>
+				<sent>Well, basics are important. Don't you agree?</sent>
+			</dial>
+			<dial id="back_street_yes_anw">
+				<sent>That's good. So, for now and only for your eyes...</sent>
+				<sent>[color=green]AN UNPOLISHED AND [color=blue]CUTRE[/color] LOCALIZATION CHANGE![/color]</sent>
+			</dial>
+			<dial id="back_street_no_anw">
+				<sent>Ok, so, it seems that we disagree on this.</sent>
+			</dial>
+			<dial id="back_street_2">
+				<sent>It was really really cool, right?</sent>
+				<sent>Ok, there's no more choices, no more buttons, no more writting...</sent>
+				<sent>I'm tired and I think that this engloves all the testes. Next is to create scenes inside scenes and have a loooooooot of very little scenes.</sent>
+				<sent>But, for now, as this [color=red]world[/color] has no exit button, it's time to start again.</sent>
+				<sent>Thanks for playing-watching, and have a good day.</sent>
+			</dial>
+			<dial id="nothing">
+				<sent>Really? You want to start again the scene?</sent>
+				<sent>I could ask you a loooooot of time if you're really sure, but...</sent>
+				<sent>This is nothing serious, right? Only some test to improve the framework and to act as a game developer or so...</sent>
+				<sent>Ok, so it's time to start again!</sent>
+				<sent>Fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu!</sent>
+			</dial>
+		</dial_group>
 	</dialogs>
 	<choices>
+		<ch_group id="BackTest">
+			<ch id="saluton_ch_a">
+				<sent>Yes, I want to come with you.</sent>				
+			</ch>
+			<ch id="saluton_ch_b">
+				<sent>No, I don't really care.</sent>
+			</ch>
+			<ch id="saluton_ch_c">
+				<sent>What? Start again...</sent>
+			</ch>
+			<ch id="forest_ch_a">
+				<sent>Yes, I want to go back.</sent>
+			</ch>
+			<ch id="forest_ch_b">
+				<sent>Have I another option?</sent>
+			</ch>	
+			<ch id="back_street_yes">
+				<sent>Yes, totally!</sent>
+			</ch>
+			<ch id="back_street_no">
+				<sent>Nah, I don't think so</sent>
+			</ch>
+		
+		</ch_group>
 		<ch_group id="ChoiceTest">
 			<ch id="first_btn">
-				<sent>Yes, it's time to check my first choice</sent>
+				<sent>Yes, it's time to check my first choice.</sent>
 			</ch>
 			<ch id="second_btn">
 				<sent>No, I don't want to test.</sent>

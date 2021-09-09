@@ -2,6 +2,7 @@ using Godot;
 using Base.Interfaces;
 using System;
 using MySystems;
+using MySystems.VisualNovel;
 using System.Text;
 
 namespace UI.Dialog

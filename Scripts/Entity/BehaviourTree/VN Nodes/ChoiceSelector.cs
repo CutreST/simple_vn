@@ -1,5 +1,6 @@
 using Godot;
 using MySystems;
+using MySystems.VisualNovel;
 using System;
 using System.Collections.Generic;
 

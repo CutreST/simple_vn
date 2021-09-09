@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using UI.Dialog;
 
-namespace MySystems
+namespace MySystems.VisualNovel
 {
 
     public class ChoiceSystem : Visual_SystemBase

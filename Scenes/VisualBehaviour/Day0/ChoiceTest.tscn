@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/DialogNode.cs" type="Script" id=1]
 [ext_resource path="res://Scripts/Entity/BehaviourTree/Base Nodes/SequenceNode.cs" type="Script" id=2]
 [ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ChoiceRoute.cs" type="Script" id=3]
 [ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ChoiceSelector.cs" type="Script" id=4]
 [ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ReferenceNode.cs" type="Script" id=5]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ChangeBackground.cs" type="Script" id=6]
+[ext_resource path="res://Sprites/Backgrounds/Back_Test_2.tres" type="Texture" id=7]
+[ext_resource path="res://Sprites/Backgrounds/country-platform-preview.png" type="Texture" id=8]
 
 [node name="ChoiceTest" type="Node2D"]
 script = ExtResource( 2 )
@@ -25,6 +28,10 @@ script = ExtResource( 3 )
 CHOICE_ID = "first_btn"
 TO_LOAD = 1
 
+[node name="ChangeBack-Test" type="Node" parent="Choice_Selector/Choice_A"]
+script = ExtResource( 6 )
+background = ExtResource( 7 )
+
 [node name="Route_A" type="Node" parent="Choice_Selector/Choice_A"]
 script = ExtResource( 1 )
 DIAL_ID = "route_a"
@@ -37,6 +44,10 @@ NODE_PATH = "Choice_Selector"
 script = ExtResource( 3 )
 CHOICE_ID = "second_btn"
 TO_LOAD = 1
+
+[node name="ChangeBack-Test2" type="Node" parent="Choice_Selector/Choice_B"]
+script = ExtResource( 6 )
+background = ExtResource( 8 )
 
 [node name="Route_B" type="Node" parent="Choice_Selector/Choice_B"]
 script = ExtResource( 1 )
