@@ -59,6 +59,8 @@ namespace MySystems
             return builder.ToString();
         }
 
+        // TODO!!!!
+        // Modify this to make all lower case 
         private static XmlNode GetChildByID(in XmlNode root, in string id){
             XmlAttribute attribute;
 
@@ -79,8 +81,9 @@ namespace MySystems
             if (path == null)
             {
                 path = System.IO.Directory.GetCurrentDirectory();
-                path += @"/" + RELATIVE_PATH + "//" + FILE_NAME;
+                path += @"/" + RELATIVE_PATH + FILE_NAME;
             }
+            Messages.Print(path);
             return path;
         }
 

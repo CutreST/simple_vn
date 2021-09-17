@@ -47,29 +47,6 @@ namespace MySystems
 
         #region Write Methods (TODO: Another class?)
 
-        public void WriteTurn(in uint turn){
-            _console.WriteOnConsole("Turn " + turn.ToString(), COLOR_DEFAULT);
-        }
-        public void WriteAttack(in string attacker, in string receiver, in int damage){
-            string mess = $"{attacker} deals {damage} of damage to {receiver}";
-            _console.WriteOnConsole(mess, COLOR_ATTACK);
-        }
-
-        public void WriteZeroAttack(in string attacker, in string receiver){
-            string mess = $"{attacker} attacks {receiver} and fails.";
-            _console.WriteOnConsole(mess, COLOR_FAIL);
-        }
-        public void WriteOpenDoor(){
-            string mess = "You opened a door";
-            _console.WriteOnConsole(mess, COLOR_DEFAULT);
-        }
-
-        public void WriteDead(string nameHitter, string nameReceiver)
-        {
-            string mess = $"{nameHitter} kills {nameReceiver}";
-            _console.WriteOnConsole(mess, COLOR_DEAD);
-        }
-
         public static void Write(in string mess){
             Messages.Print("yelloooow");
             _console.WriteOnConsole(mess, COLOR_DEFAULT);

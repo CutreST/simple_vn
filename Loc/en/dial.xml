@@ -129,6 +129,31 @@
 				<sent>Fuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu!</sent>
 			</dial>
 		</dial_group>
+		<dial_group id="MusicTest">
+			<dial id="Start">
+				<sent>Hello again! For todays test, is mandatory that you turn on your speakers.</sent>
+				<sent>Yes! That's true! It's time for some BGM.</sent>
+				<sent>Right now the world is quiet and in silence. I think is cool, but, some BGM doesn't hurt.</sent>
+				<sent>So, I think I'm gonna go with some rain.</sent>
+			</dial>
+			<dial id="Rain">
+				<sent>All the BGM are from [color=green]opengameart[/color]. The page has a huge selection of free content :D.</sent>
+				<sent>This is some rain. Here, in real life, is raining too, but we have some draindrops and not an static image. Hahahaha.</sent>
+				<sent>Ok, so now we are going to change for some music.</sent>
+			</dial>
+			<dial id="Music">
+				<sent>Wooo, it works! I'm proud of you! It looks like you know how to do things! ❤</sent>
+				<sent>Ok, the song is from [color=green]opengameart[/color] too. I know that you like music but when is time to make a song is like...</sent>
+				<sent>What do you say about some buttons? We have only two tracks though.</sent>
+			</dial>
+			<dial id="Post_selection">
+				<sent>Perfect. I'm too lazy to create a loooot of new nodes.</sent>
+				<sent>So, I'm thinking about referencing the choice node and entering an infinity loop.</sent>
+				<sent>Why this always turns to be an inifinity loop?</sent>
+				<sent>Well, it's a metaphor of your life, maybe?</sent>
+				<sent>Don't know and don't wanna know. Make some scripted choices!</sent>
+			</dial>
+		</dial_group>		
 	</dialogs>
 	<choices>
 		<ch_group id="BackTest">
@@ -166,5 +191,16 @@
 				<sent>...</sent>
 			</ch>			
 		</ch_group>		
+		<ch_group id="MusicTest">
+			<ch id="rain_btn">
+				<sent>I want to hear the rain!</sent>
+			</ch>
+			<ch id="track_btn">
+				<sent>I want to hear the music track!</sent>
+			</ch>
+			<ch id="silence_btn">
+				<sent>I want some silence!</sent>
+			</ch>
+		</ch_group>
 	</choices>
 </Full_Dial>

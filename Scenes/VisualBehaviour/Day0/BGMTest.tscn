@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scripts/Entity/BehaviourTree/Base Nodes/SequenceNode.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/DialogNode.cs" type="Script" id=2]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/Sound Nodes/ChangeBGM.cs" type="Script" id=3]
+[ext_resource path="res://Audio/BGM/MyVeryOwnDeadShip.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Audio/BGM/Dark_Rainy_Night(ambience).ogg" type="AudioStream" id=5]
+[ext_resource path="res://Sprites/Backgrounds/Back_Test.tres" type="Texture" id=6]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ChangeBackground.cs" type="Script" id=7]
+[ext_resource path="res://Sprites/Backgrounds/country-platform-preview.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Backgrounds/background.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ChoiceSelector.cs" type="Script" id=10]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ChoiceRoute.cs" type="Script" id=11]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ReferenceNode_U.cs" type="Script" id=12]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/Sound Nodes/StopBGM.cs" type="Script" id=13]
+
+[node name="MusicTest" type="Node"]
+script = ExtResource( 1 )
+
+[node name="bck_forest" type="Node" parent="."]
+script = ExtResource( 7 )
+background = ExtResource( 8 )
+
+[node name="talk_start" type="Node" parent="."]
+script = ExtResource( 2 )
+DIAL_ID = "Start"
+
+[node name="bck_street" type="Node" parent="."]
+script = ExtResource( 7 )
+background = ExtResource( 6 )
+
+[node name="change_rain" type="Node" parent="."]
+script = ExtResource( 3 )
+_song = ExtResource( 5 )
+
+[node name="talk_rain" type="Node" parent="."]
+script = ExtResource( 2 )
+DIAL_ID = "Rain"
+
+[node name="bck_pink" type="Node" parent="."]
+script = ExtResource( 7 )
+background = ExtResource( 9 )
+
+[node name="change_music" type="Node" parent="."]
+script = ExtResource( 3 )
+_song = ExtResource( 4 )
+
+[node name="talk_music" type="Node" parent="."]
+script = ExtResource( 2 )
+DIAL_ID = "Music"
+
+[node name="sequence" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="ChoiceTest" type="Node" parent="sequence"]
+script = ExtResource( 10 )
+
+[node name="rain" type="Node" parent="sequence/ChoiceTest"]
+script = ExtResource( 11 )
+CHOICE_ID = "rain_btn"
+TO_LOAD = 1
+
+[node name="bck_street" type="Node" parent="sequence/ChoiceTest/rain"]
+script = ExtResource( 7 )
+background = ExtResource( 6 )
+
+[node name="change_rain" type="Node" parent="sequence/ChoiceTest/rain"]
+script = ExtResource( 3 )
+_song = ExtResource( 5 )
+
+[node name="music" type="Node" parent="sequence/ChoiceTest"]
+script = ExtResource( 11 )
+CHOICE_ID = "track_btn"
+TO_LOAD = 1
+
+[node name="bck_pink" type="Node" parent="sequence/ChoiceTest/music"]
+script = ExtResource( 7 )
+background = ExtResource( 9 )
+
+[node name="change_music" type="Node" parent="sequence/ChoiceTest/music"]
+script = ExtResource( 3 )
+_song = ExtResource( 4 )
+
+[node name="silence" type="Node" parent="sequence/ChoiceTest"]
+script = ExtResource( 11 )
+CHOICE_ID = "silence_btn"
+TO_LOAD = 1
+
+[node name="bck_forest" type="Node" parent="sequence/ChoiceTest/silence"]
+script = ExtResource( 7 )
+background = ExtResource( 8 )
+
+[node name="bck_stop" type="Node" parent="sequence/ChoiceTest/silence"]
+script = ExtResource( 13 )
+
+[node name="talk_postSel" type="Node" parent="sequence"]
+script = ExtResource( 2 )
+DIAL_ID = "Post_selection"
+
+[node name="ref_ChoiceTest" type="Node" parent="sequence"]
+script = ExtResource( 12 )
+NODE_PATH = "sequence"

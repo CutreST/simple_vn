@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/night-chip.ogg-6a6e566efa07d13c7e1e1668b94e7905.oggstr"
+
+[deps]
+
+source_file="res://Audio/Temp audio/night-chip.ogg"
+dest_files=[ "res://.import/night-chip.ogg-6a6e566efa07d13c7e1e1668b94e7905.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

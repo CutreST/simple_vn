@@ -38,14 +38,13 @@ namespace Entities.BehaviourTree.VN_Nodes
 
         public override States Tick(in TreeController controller)
         {
-            if (base.NodeState != States.RUNNING)
+            if (base.NodeState != States.RUNNING || base.CurrentChild == this)
             {
                 base.ChangeNodeStatus(controller, States.RUNNING);
                 return States.SUCCESS;
             }
             else
             {
-
                 return base.Tick(controller);
             }
         }

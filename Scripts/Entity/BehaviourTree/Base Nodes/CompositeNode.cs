@@ -16,6 +16,8 @@ namespace Entities.BehaviourTree
         /// <value></value>
         public List<BaseNode> Children { get; protected set; }
 
+        public BaseNode CurrentChild { get => Children[Index]; }
+
         /// <summary>
         /// The index
         /// </summary>
