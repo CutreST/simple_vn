@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Entity/BehaviourTree/Base Nodes/SequenceNode.cs" type="Script" id=1]
 [ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/DialogNode.cs" type="Script" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ChoiceRoute.cs" type="Script" id=11]
 [ext_resource path="res://Scripts/Entity/BehaviourTree/VN Nodes/ReferenceNode_U.cs" type="Script" id=12]
 [ext_resource path="res://Scripts/Entity/BehaviourTree/Sound Nodes/StopBGM.cs" type="Script" id=13]
+[ext_resource path="res://Scripts/Entity/BehaviourTree/Sound Nodes/PlaySound.cs" type="Script" id=14]
+[ext_resource path="res://Audio/Temp audio/fireball.wav" type="AudioStream" id=15]
 
 [node name="MusicTest" type="Node"]
 script = ExtResource( 1 )
@@ -92,6 +94,10 @@ background = ExtResource( 8 )
 
 [node name="bck_stop" type="Node" parent="sequence/ChoiceTest/silence"]
 script = ExtResource( 13 )
+
+[node name="sound_test" type="Node" parent="sequence"]
+script = ExtResource( 14 )
+sound = ExtResource( 15 )
 
 [node name="talk_postSel" type="Node" parent="sequence"]
 script = ExtResource( 2 )

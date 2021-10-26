@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Audio/SoundDisp.cs" type="Script" id=1]
+
+[node name="SoundDisp" type="Node"]
+script = ExtResource( 1 )
