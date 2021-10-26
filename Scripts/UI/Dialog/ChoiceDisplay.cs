@@ -6,20 +6,48 @@ using System.Collections.Generic;
 
 namespace UI.Dialog
 {
-
+    /// <summary>
+    /// Class that displays all the choices
+    /// </summary>
     public class ChoiceDisplay : Control
     {
-
+        /// <summary>
+        /// Name of the container.
+        /// </summary>
         [Export]
         private readonly string CONTAINER_NAME;
 
+        /// <summary>
+        /// The <see cref="ChoiceSystem"/> where this is attached
+        /// </summary>
         public ChoiceSystem ChoiceSys { get; set; }
 
-        List<ChoiceButton> _unusedButtons;
-        List<ChoiceButton> _usedButtons;
+        /// <summary>
+        /// The buttons loaded but not used 'cause we use a pool
+        /// </summary>
+        /// <remarks>
+        /// TODO: generic class for pools
+        /// </remarks>
+        private List<ChoiceButton> _unusedButtons;
 
+        /// <summary>
+        /// The buttons that are currently used.
+        /// </summary>
+        private List<ChoiceButton> _usedButtons;
+
+        /// <summary>
+        /// Default button for the choices
+        /// </summary>
         ChoiceButton _original_btn;
+
+        /// <summary>
+        /// The container box.
+        /// </summary>
         VBoxContainer _container;
+
+        /// <summary>
+        /// TODO: create a button input for the buttons. 
+        /// </summary>
 
         public override void _EnterTree()
         {
@@ -44,7 +72,7 @@ namespace UI.Dialog
 
             if (ChoiceSys == null)
             {
-                //creamos el sistema
+                //create the system
                 ChoiceSystem ch;
                 System_Manager.GetInstance(this).TryGetSystem<ChoiceSystem>(out ch, true);
                 ChoiceSys = ch;
@@ -52,6 +80,11 @@ namespace UI.Dialog
 
         }
 
+        /// <summary>
+        /// Show the choices on the screen
+        /// </summary>
+        /// <param name="choices">A list of <see cref="Entities.BehaviourTree.VN_Nodes.ChoiceRoute"/>
+        /// that are the choices</param>
         public void ShowChoices(in List<Entities.BehaviourTree.VN_Nodes.ChoiceRoute> choices)
         {
             base.Show();
@@ -63,10 +96,14 @@ namespace UI.Dialog
             }
         }
 
+        /// <summary>
+        /// Hides this ui menu
+        /// </summary>
         public void MyHide()
         {
             base.Hide();
 
+            //hides all buttons
             for (int i = _usedButtons.Count - 1; i > -1; i--)
             {
                 _usedButtons[i].Text = "";
@@ -77,6 +114,11 @@ namespace UI.Dialog
             }
         }
 
+        /// <summary>
+        /// Spawns a new choice button
+        /// </summary>
+        /// <param name="text">The text of the choice</param>
+        /// <param name="index">The index of the button at <see cref="_usedButtons"/></param>
         private void SpawnButton(in string text, in int index)
         {
             ChoiceButton temp;

@@ -6,7 +6,10 @@ using Base.Interfaces;
 
 namespace UI
 {
-
+    /// <summary>
+    /// A simple console <see cref="Control"/>. Used for diferents projects, now it's for debug
+    /// prourposes
+    /// </summary>
     public class Console : Control
     {
         /// <summary>
@@ -228,75 +231,22 @@ namespace UI
             }
         }
 
+        /// <summary>
+        /// Remove a label from <see cref="_usedLabels"/> and move to
+        /// <see cref="_unusedLabels"/>
+        /// </summary>
+        /// <param name="label"></param>
         private void RemoveLabel(in Label label)
         {
             _unusedLabels.Add(label);
             label.Hide();
             _usedLabels.Remove(label);
             label.Text = "";
-        }
-
+        }       
+       
         /// <summary>
-        /// TODO: change!!!
+        /// Clears the text of the console
         /// </summary>
-        /// <param name="attacker"></param>
-        /// <param name="receiver"></param>
-        /// <param name="damage"></param>
-        /// <param name="color"></param>
-        public void WriteAttack(in string attacker, in string receiver, in int damage, in Color color)
-        {
-            string message = $"{attacker} deals {damage} of damage to {receiver}";
-            this.WriteOnConsole(message, color);
-        }
-
-        #region process test
-        /*
-        /// <summary>
-        /// TODO: ERASE
-        /// </summary>
-        /// <param name="delta"></param>
-        public override void _PhysicsProcess(float delta)
-        {
-
-            time2 += delta;
-
-            if (time2 > SPAWN)
-            {
-                time2 = 0;
-
-                RandomNumberGenerator gen = new RandomNumberGenerator();
-                gen.Randomize();
-                int sol = gen.RandiRange(0, 5);
-
-                switch (sol)
-                {
-                    case 0:
-                        this.WriteAttack("Player", "Orc", 8, Colors.Green);
-                        break;
-                    case 1:
-                        this.WriteAttack("Orc", "Player", 4, Colors.Red);
-                        break;
-                    case 2:
-                        this.WriteAttack("Player", "Troll", 2, Colors.Blue);
-                        break;
-                    case 3:
-                        this.WriteAttack("Player", "Orc", 0, Colors.White);
-                        break;
-                    case 4:
-                        this.WriteAttack("The cat that sleeps on the couch", "some old lady", 150, Colors.DarkMagenta);
-                        break;
-                    case 5:
-                        this.WriteAttack("The sun", "the skin", -25, Colors.DarkOrchid);
-                        break;
-                }
-
-                this.WriteAttack("Iddle text", "me, and it hurts", 200, Colors.DeepSkyBlue);
-            }
-
-        }
-        */
-        #endregion
-
         public void ClearConsoleText()
         {
             Label label;
@@ -307,7 +257,7 @@ namespace UI
                 this.RemoveLabel(label);
             }
         }
-
+        
         public override void _Process(float delta)
         {
             if (_toWrite.Count > 0)

@@ -5,15 +5,37 @@ using System.Xml;
 
 namespace MySystems
 {
-
+    /// <summary>
+    /// Loads an xml for the dialogs. 
+    /// </summary>
+    /// <remarks>
+    /// Ok, maybe an txt with all this settings?
+    /// </remarks>
     public class LoadXML
     {
+        /// <summary>
+        /// The relative path
+        /// </summary>
         private static string RELATIVE_PATH { get => "Loc/en/"; }
 
+        /// <summary>
+        /// Filename
+        /// </summary>
         private static string FILE_NAME { get => "dial.xml"; }
 
+        /// <summary>
+        /// The root of the dialogs
+        /// </summary>
         private static string XML_ROOT { get => "FullDial"; }
+
+        /// <summary>
+        /// Tag for a unique dialog
+        /// </summary>
         private static string TAG_DIAL { get => "dial"; }
+
+        /// <summary>
+        /// Tag for
+        /// </summary>
         private static string TAG_DIAL_GENERAL { get => "dialogs"; }
         private static string TAG_DIAL_GROUP { get => "dial_group"; }
         private static string TAG_CHOICE { get => "ch"; }

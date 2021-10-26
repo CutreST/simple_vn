@@ -20,7 +20,7 @@ AppManager_GO="*res://Scripts/MySystems/AppManager_GO.cs"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/mono_debugger/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/behaviour_nodes/plugin.cfg", "res://addons/mono_debugger/plugin.cfg" )
 
 [input]
 

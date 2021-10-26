@@ -5,20 +5,47 @@ using MySystems;
 using MySystems.VisualNovel;
 using System.Text;
 
+/// <summary>
+/// Group for all UI dialog related
+/// </summary>
+/// <remarks>
+/// So, we are using something as a System based model, so every UI display
+/// has a system that connects the outside with this. Maybe it's not the 
+/// best, but it works well. 
+/// </remarks>
+
 namespace UI.Dialog
 {
+    /// <summary>
+    /// Display for the dialog.
+    /// </summary>
     public class DialogDisplay : Control, IUpdate
     {
+        /// <summary>
+        /// default lable name
+        /// </summary>
         [Export]
         private readonly string LBL_DIAL_NAME;
 
+        /// <summary>
+        /// Time for loading the text
+        /// </summary>
         [Export]
         private readonly float TIME_TO_SHOW;
 
+        /// <summary>
+        /// The <see cref="DialogSystem"/> attached to this display
+        /// </summary>
         public DialogSystem DialogSystem { get; set; }
-
+        
+        /// <summary>
+        /// Full text to display. It has all the sentences that we want to pirnt
+        /// </summary>
         public StringBuilder TextToDisplay { get; private set; }
 
+        /// <summary>
+        /// It holds only the text to show, generally a sentence or paragraph. 
+        /// </summary>
         public StringBuilder TextToShow { get; private set; }
 
         private RichTextLabel lbl_dial;
@@ -27,9 +54,19 @@ namespace UI.Dialog
 
         private float currentTime; //-> CHANGE THIS!
 
-        private char NEW_LINE_A = '\n';
-        private char NEW_LINE_B = '\r';
+        /// <summary>
+        /// New line character
+        /// </summary>
+        private const char NEW_LINE_A = '\n';
 
+        /// <summary>
+        /// Another new line character, just in case
+        /// </summary>
+        private const char NEW_LINE_B = '\r';
+
+        /// <summary>
+        /// Status of the current dialog sentence
+        /// </summary>
         public enum Status : byte { RUNNING, FINISHED, SHOWING, WAITING }
         public Status DialStatus { get; private set; }
 
@@ -40,9 +77,12 @@ namespace UI.Dialog
             TextToShow = new StringBuilder();
             TextToDisplay = new StringBuilder();
             lbl_dial = this.TryGetFromChild_Rec<RichTextLabel>(LBL_DIAL_NAME);
-            this.PutTextToDisplay("La [color=green]señorita caquita[/color] era famosa por esos lares.\n La llamaban fea, a saber por qué.\n Quizás estaba fuera de sí.\n");
+            //this.PutTextToDisplay("La [color=green]señorita caquita[/color] era famosa por esos lares.\n La llamaban fea, a saber por qué.\n Quizás estaba fuera de sí.\n");
         }
 
+        /// <summary>
+        /// A simple test for debug prourpouses
+        /// </summary>
         private void TestInit()
         {
             DialogSystem temp;
@@ -53,6 +93,10 @@ namespace UI.Dialog
             man.AddToStack(DialogSystem);
         }
 
+        /// <summary>
+        /// Sets <see cref="DialStatus"/> to waiting or finished if the
+        /// <see cref="TextToDisplay"/> equals the index
+        /// </summary>
         private void SetWaitingStatus()
         {
 
@@ -65,10 +109,11 @@ namespace UI.Dialog
 
         public void MyUpdate(in float delta)
         {
+            //if there's input
             if (DialogSystem.DialInput.IsNext)
             {
                 ConsoleSystem.Write("Accepted!");
-
+                // change to method?
                 switch (DialStatus)
                 {
                     case Status.SHOWING:
@@ -90,6 +135,7 @@ namespace UI.Dialog
                 }
             }
 
+            // i think i can do it better
             switch (DialStatus)
             {
                 case Status.SHOWING:
@@ -113,6 +159,9 @@ namespace UI.Dialog
             }
         }
 
+        /// <summary>
+        /// Sets the next line from <see cref="TextToDisplay"/>
+        /// </summary>
         private void SetNextLine()
         {
             char current;
@@ -134,6 +183,10 @@ namespace UI.Dialog
             lbl_dial.VisibleCharacters = 0;
         }
 
+        /// <summary>
+        /// Puts a text to <see cref="TextToDisplay"/>
+        /// </summary>
+        /// <param name="text">Text wanted to display</param>
         public void PutTextToDisplay(in string text)
         {
             base.Show();

@@ -5,9 +5,14 @@ using System;
 
 namespace UI.Dialog
 {
-
+    /// <summary>
+    /// The button that holds a choice
+    /// </summary>
     public class ChoiceButton : Button
     {
+        /// <summary>
+        /// Index of the button at <see cref="ChoiceDisplay._usedButtons"/>
+        /// </summary>
         public int Index{ get; set; }
 
         public override void _EnterTree()
@@ -23,6 +28,9 @@ namespace UI.Dialog
             base.Disconnect("pressed", this, nameof(OnPressed));
         }
 
+        /// <summary>
+        /// Event raised when the button is pressed
+        /// </summary>
         public void OnPressed(){
             ConsoleSystem.Write("Pressed ChoiceButton " + Index);
 

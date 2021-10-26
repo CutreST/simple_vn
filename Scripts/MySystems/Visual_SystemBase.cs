@@ -130,7 +130,7 @@ namespace MySystems
 
 
         /// <summary>
-        /// Adds an <see cref="ILateUpdate"/> object to <see cref="LateObjs/> if it is not inside
+        /// Adds an <see cref="ILateUpdate"/> object to <see cref="LateObjs"/> if it is not inside
         /// </summary>
         /// <param name="obj">The object to add</param>
         /// <returns></returns>
@@ -205,11 +205,7 @@ namespace MySystems
 
 
         #endregion
-        /*
-        public void InitializeInput(in MyInputSys.ActionMapsEnum action)
-        {
-            MyInput.EnableActionMaps(action);
-        }*/
+        
 
     }
 }

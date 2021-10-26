@@ -5,21 +5,41 @@ using Audio;
 
 namespace MySystems
 {
-
+    /// <summary>
+    /// System to play music
+    /// </summary>
     public class MusicSystem : System_Base
     {
-        const string PATH = "res://Scenes/Audio/MusicDisp.tscn";
+        /// <summary>
+        /// Path for the scene
+        /// </summary>
+        private const string PATH = "res://Scenes/Audio/MusicDisp.tscn";
 
-        AudioStream _currentStream;
+        /// <summary>
+        /// Current music playing
+        /// </summary>
+        private AudioStream _currentStream;
 
-        Stack<AudioStream> _stackStream;
+        /// <summary>
+        /// An stack of streams.
+        /// </summary>
+        private Stack<AudioStream> _stackStream;
 
-        MusicDisp _disp;
+        /// <summary>
+        /// The displayer
+        /// </summary>
+        private MusicDisp _disp;
 
+        /// <summary>
+        /// constructor
+        /// </summary>
         public MusicSystem(){
             _stackStream = new Stack<AudioStream>();
         }
 
+        /// <summary>
+        /// Initialices the list and nodes
+        /// </summary>
         private void Init(){
             Node n = MyManager.NodeManager.GetParent();
             _disp = n.TryGetFromChild_Rec<MusicDisp>();
@@ -33,6 +53,9 @@ namespace MySystems
             }
         }
 
+        /// <summary>
+        /// Stops the track
+        /// </summary>
         internal void StopTrack()
         {
             _disp.StopTrack();
@@ -55,7 +78,8 @@ namespace MySystems
             _disp.PlayTrack(_currentStream);
 
         }
-
+        
+        
         public bool TryRemoveFromStack(){
 
             if(_stackStream.Count == 0){
